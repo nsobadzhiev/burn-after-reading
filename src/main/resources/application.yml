@@ -1,0 +1,18 @@
+spring:
+  liquibase:
+    change-log: classpath:/db/changelog/db-changelog.yml
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: default
+  dataSource:
+    driver-class-name: org.h2.Driver
+    jdbcUrl: jdbc:h2:~/secrets_db
